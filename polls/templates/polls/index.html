@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <style>
+        ol{
+            padding-inline-start:20px;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        {% for question in questions %}
+            <li>
+                <p>{{ question.question_text }}</p>
+                <ol>
+                    {% for choice in question.choice_set.all %}
+                        <li>{{ choice.choice_text }}</li>
+                    {% endfor %}
+                    </ol>
+                </li>
+        {% endfor %}
+    </ol>
+</body>
+</html>
