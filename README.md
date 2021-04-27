@@ -1,5 +1,5 @@
-# deploy-django-to-heroku
-Deploy Django app to Heroku using this [app](https://github.com/Semicolon-Tech/get-started-with-django).
+# Deploy Django to Heroku
+Deploy Django app to Heroku using this [app](https://github.com/Semicolon-Tech/get-started-with-django). This is a step by step guide
 
 # Setup and Installation
 ## Prerequisites
@@ -83,12 +83,19 @@ Deploy Django app to Heroku using this [app](https://github.com/Semicolon-Tech/g
     git push -u origin indev # this will set the remote to indev instead of main
     ```
 1. login to your heroku account. [login](https://id.heroku.com/login)
-1. Click on __new__ to __create new pipeline__.
-1. __Name the pipeline__ and __connect__ the account to __github__ and choose the repository
+1. Click on ___new___ to ___create new pipeline___.
+1. ___Name the pipeline___ and ___connect___ the account to ___github___ and choose the repository
 1. Click add new app and create a new app in the staging
 1. Click add new app and create a new app in the production
-1. Click the app and visit __resource__ tab and search for __Heroku Postgres__ and apply the __Hobby Dev Free__.
-1. Visit the __deploy__ tab and set teh automatic deploy to their respective branch
+1. Click the app and visit ___resource___ tab and search for ___Heroku Postgres___ and apply the ___Hobby Dev Free___.
+1. Visit the ___deploy___ tab and set teh automatic deploy to their respective branch
+1. Visit the settings tab and add same things in the [.env](./.env) in the ___config vars___. The `ALLOWED_HOSTS` must be your heroku domain name.
+1. Make a Pull request to dev and master to see the update on heroku. Or just deploy directly on heroku.
+1. Visit the __heroku console__ via the more button and run the following commands one after the other
+    ```
+    python manage.py migrate
+    python manage.py createsuperuser
+    ```
 
 
 # References
